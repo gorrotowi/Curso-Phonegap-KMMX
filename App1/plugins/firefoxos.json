@@ -4,8 +4,33 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {}
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"firefoxos-package\" value=\"Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"firefoxos-package\" value=\"Notification\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
     },
-    "installed_plugins": {},
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.kmmx.appone"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.kmmx.appone"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.kmmx.appone"
+        }
+    },
     "dependent_plugins": {}
 }

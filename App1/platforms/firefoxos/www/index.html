@@ -26,17 +26,27 @@
         <title>Hello World</title>
     </head>
     <body>
+    
         <div class="app">
             <h1>PhoneGap</h1>
-            <div id="deviceready">
+            <div id="deviceready" onclick="alert('hello!')">
                 <p class="status pending blink">Connecting to Device</p>
                 <p class="status complete blink hide">Device is Ready</p>
+                <div id="devicedata">
+                    device data...
+                </div>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+//            window.addEventListener("batterystatus", onBatteryStatus, false);
+//
+//            function onBatteryStatus(info) {
+//                // Handle the online event
+//                alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
+//            }
         </script>
     </body>
 </html>

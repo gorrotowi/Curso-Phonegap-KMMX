@@ -27,7 +27,16 @@ var app = {
         // This is an event handler function, which means the scope is the event.
         // So, we must explicitly called `app.report()` instead of `this.report()`.
         app.report('deviceready');
+//        window.addEventListener('batterystatus', this.onBatterystatus, false)
+//        function onBatterystatus(info){
+//            console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
+//        }
+//        alert("hello phonegap")
     },
+    onBatterystatus:function(info){
+        console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
+    }
+    ,
     report: function(id) {
         // Report the event in the console
         console.log("Report: " + id);
@@ -35,8 +44,12 @@ var app = {
         // Toggle the state from "pending" to "complete" for the reported ID.
         // Accomplished by adding .hide to the pending element and removing
         // .hide from the complete element.
-        document.querySelector('#' + id + ' .pending').className += ' hide';
-        var completeElem = document.querySelector('#' + id + ' .complete');
-        completeElem.className = completeElem.className.split('hide').join('');
+//        document.querySelector('#' + id + ' .pending').className += ' hide';
+//        var completeElem = document.querySelector('#' + id + ' .complete');
+//        completeElem.className = completeElem.className.split('hide').join('');
+        
+        var devicedatatag = document.getElementById('devicedata');
+        devicedatatag.innerHTML = "device name " + device.version
+        
     }
 };
