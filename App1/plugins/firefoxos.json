@@ -18,6 +18,16 @@
                         }
                     ]
                 }
+            },
+            "www/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"firefoxos-package\" value=\"Vibration\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
@@ -29,6 +39,9 @@
             "PACKAGE_NAME": "com.kmmx.appone"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.kmmx.appone"
+        },
+        "cordova-plugin-vibration": {
             "PACKAGE_NAME": "com.kmmx.appone"
         }
     },

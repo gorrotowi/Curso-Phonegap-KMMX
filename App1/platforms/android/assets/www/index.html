@@ -40,19 +40,22 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            app.initialize();  
+          
+            //alertPlugin()
             
             function alertPlugin(){
                 navigator.notification.alert(
-                'esta es una alerta', 
-                suma,
+                'Quieres vibrar?', 
+                vibrar,
                 'titulo de la alerta',
                 'Ok'
                 );
             }
             
-            function suma(){
-                alert(9+4);
+            function vibrar(){
+                //alertvibrar9+4);
+                navigator.vibrate(2500);
             }
 //            window.addEventListener("batterystatus", onBatteryStatus, false);
 //

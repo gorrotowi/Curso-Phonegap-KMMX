@@ -20,6 +20,14 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+        "id": "cordova-plugin-vibration.notification",
+        "merges": [
+            "navigator.notification",
+            "navigator"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -27,7 +35,8 @@ module.exports.metadata =
 {
     "cordova-plugin-battery-status": "1.0.0",
     "cordova-plugin-device": "1.0.0",
-    "org.apache.cordova.dialogs": "0.3.0"
+    "org.apache.cordova.dialogs": "0.3.0",
+    "cordova-plugin-vibration": "1.2.0"
 }
 // BOTTOM OF METADATA
 });

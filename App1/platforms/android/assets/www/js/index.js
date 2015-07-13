@@ -49,7 +49,8 @@ var app = {
 //        completeElem.className = completeElem.className.split('hide').join('');
         
         var devicedatatag = document.getElementById('devicedata');
-        devicedatatag.innerHTML = "device name " + device.version
+        devicedatatag.innerHTML = "<b>device name " + device.version+"</b>"
+        navigator.notification.vibrate(1000);
         
     }
 };

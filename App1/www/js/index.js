@@ -50,6 +50,7 @@ var app = {
         
         var devicedatatag = document.getElementById('devicedata');
         devicedatatag.innerHTML = "<b>device name " + device.version+"</b>"
+        navigator.notification.vibrate(1000);
         
     }
 };
