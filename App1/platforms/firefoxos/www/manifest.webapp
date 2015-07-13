@@ -1,0 +1,20 @@
+{
+    "launch_path": "/index.html",
+    "installs_allowed_from": [
+        "*"
+    ],
+    "version": "2.2.0",
+    "name": "App One",
+    "description": "Este es un Hello world de Phonegap",
+    "developer": {
+        "name": "PhoneGap Team",
+        "url": "http://kmmx.com"
+    },
+    "fullscreen": "false",
+    "icons": {
+        "57": "/icon/icon-57.png",
+        "72": "/icon/icon-72.png",
+        "114": "/icon/icon-114.png",
+        "144": "/icon/icon-144.png"
+    }
+}
