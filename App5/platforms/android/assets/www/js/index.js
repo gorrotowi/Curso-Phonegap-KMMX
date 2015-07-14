@@ -48,8 +48,9 @@ var app = {
                         "Result: " + result.text + "\n" +
                         "Format: " + result.format + "\n" +
                         "Cancelled: " + result.cancelled);
+                  } else    {
+                        alert('codigo incorrecto')
                   }
-                  alert('codigo incorrecto')
               }, 
               function (error) {
                   alert("Scanning failed: " + error);
