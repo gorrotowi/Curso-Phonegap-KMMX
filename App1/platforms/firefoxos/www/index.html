@@ -29,7 +29,7 @@
     
         <div class="app">
             <h1>PhoneGap</h1>
-            <div id="deviceready" onclick="alert('hello!')">
+            <div id="deviceready" onclick="alertPlugin()">
                 <p class="status pending blink">Connecting to Device</p>
                 <p class="status complete blink hide">Device is Ready</p>
                 <div id="devicedata">
@@ -40,7 +40,23 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            app.initialize();  
+          
+            //alertPlugin()
+            
+            function alertPlugin(){
+                navigator.notification.alert(
+                'Quieres vibrar?', 
+                vibrar,
+                'titulo de la alerta',
+                'Ok'
+                );
+            }
+            
+            function vibrar(){
+                //alertvibrar9+4);
+                navigator.vibrate(2500);
+            }
 //            window.addEventListener("batterystatus", onBatteryStatus, false);
 //
 //            function onBatteryStatus(info) {
