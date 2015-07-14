@@ -23,8 +23,8 @@ var app = {
         var getImgData = function(){
             var onSucces = function(info){
                 var imagen = document.getElementById('image');
-                imagen.src = "data:image/jpeg;base64," +info;
-//                imagen.src = info;
+//                imagen.src = "data:image/jpeg;base64," +info;
+                imagen.src = info;
 //                window.plugins.socialsharing.share(null, null, "data:image/jpeg;base64," +info;)
             } 
             
@@ -32,11 +32,10 @@ var app = {
                 alert(error.message)
             }
             
-            navigator.camera.getPicture(onSucces, onFail, {quality:50, destinationType: Camera.DestinationType.DATA_URL})
+            navigator.camera.getPicture(onSucces, onFail, {quality:50, destinationType: Camera.DestinationType.FILE_URI})
         }
         
         document.getElementById('share').addEventListener('click', function(){
-//            alert("asdfasdfds")
 //            window.plugins.socialsharing.share("asdfasdf");
             window.plugins.socialsharing.share(null, "imagen", document.getElementById('image').src, null);
         })
