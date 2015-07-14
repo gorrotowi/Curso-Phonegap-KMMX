@@ -27,11 +27,33 @@ var app = {
         // This is an event handler function, which means the scope is the event.
         // So, we must explicitly called `app.report()` instead of `this.report()`.
         app.report('deviceready');
-//        window.addEventListener('batterystatus', this.onBatterystatus, false)
-//        function onBatterystatus(info){
-//            console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
-//        }
-//        alert("hello phonegap")
+        window.addEventListener("batterycritical", battCrit, false);
+        window.addEventListener("batterylow", battLow, false);
+        window.addEventListener("batterystatus", battStat, false);
+        
+        var drawStatus = function(info){
+            var statusdiv = document.getElementById("status");
+            var s = "<p><b>Battery Status</b><br/>";
+            s += "Level is "+info.level + "<br/>";
+            s += "Plugged in is "+info.isPlugged;
+            s += "</p>";
+            statusdiv.innerHTML = s;
+        };
+
+        var battCrit = function(info) {
+        navigator.notification.alert("Your battery is SUPER low!");
+        drawStatus(info);
+        };
+
+        var battLow = function(info) {
+        navigator.notification.alert("Your battery is low!");
+        drawStatus(info);
+        };
+
+        var battStat = function(info) {
+        drawStatus(info);
+        };
+        
     },
     onBatterystatus:function(info){
         console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
@@ -41,12 +63,9 @@ var app = {
         // Report the event in the console
         console.log("Report: " + id);
 
-        // Toggle the state from "pending" to "complete" for the reported ID.
-        // Accomplished by adding .hide to the pending element and removing
-        // .hide from the complete element.
-//        document.querySelector('#' + id + ' .pending').className += ' hide';
-//        var completeElem = document.querySelector('#' + id + ' .complete');
-//        completeElem.className = completeElem.className.split('hide').join('');
+        document.querySelector('#' + id + ' .pending').className += ' hide';
+        var completeElem = document.querySelector('#' + id + ' .complete');
+        completeElem.className = completeElem.className.split('hide').join('');
         
         var devicedatatag = document.getElementById('devicedata');
         devicedatatag.innerHTML = "<b>device name " + device.version+"</b>"
