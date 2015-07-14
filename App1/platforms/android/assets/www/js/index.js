@@ -30,6 +30,30 @@ var app = {
         window.addEventListener("batterycritical", battCrit, false);
         window.addEventListener("batterylow", battLow, false);
         window.addEventListener("batterystatus", battStat, false);
+        
+        var drawStatus = function(info){
+            var statusdiv = document.getElementById("status");
+            var s = "<p><b>Battery Status</b><br/>";
+            s += "Level is "+info.level + "<br/>";
+            s += "Plugged in is "+info.isPlugged;
+            s += "</p>";
+            statusdiv.innerHTML = s;
+        };
+
+        var battCrit = function(info) {
+        navigator.notification.alert("Your battery is SUPER low!");
+        drawStatus(info);
+        };
+
+        var battLow = function(info) {
+        navigator.notification.alert("Your battery is low!");
+        drawStatus(info);
+        };
+
+        var battStat = function(info) {
+        drawStatus(info);
+        };
+        
     },
     onBatterystatus:function(info){
         console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
@@ -48,27 +72,4 @@ var app = {
         navigator.notification.vibrate(1000);
         
     }
-};
-
-var drawStatus = function(info){
-var statusdiv = document.getElementById("status");
-var s = "<p><b>Battery Status</b><br/>";
-s += "Level is "+info.level + "<br/>";
-s += "Plugged in is "+info.isPlugged;
-s += "</p>";
-statusdiv.innerHTML = s;
-};
-
-var battCrit = function(info) {
-navigator.notification.alert("Your battery is SUPER low!");
-drawStatus(info);
-};
-
-var battLow = function(info) {
-navigator.notification.alert("Your battery is low!");
-drawStatus(info);
-};
-
-var battStat = function(info) {
-drawStatus(info);
 };
