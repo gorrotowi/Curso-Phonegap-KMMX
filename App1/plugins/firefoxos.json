@@ -4,45 +4,11 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {
-            "config.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"Device\"><param name=\"firefoxos-package\" value=\"Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Notification\"><param name=\"firefoxos-package\" value=\"Notification\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            },
-            "www/config.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"Vibration\"><param name=\"firefoxos-package\" value=\"Vibration\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            }
-        }
+        "files": {}
     },
     "installed_plugins": {
         "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "com.kmmx.appone"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.kmmx.appone"
-        },
-        "org.apache.cordova.dialogs": {
-            "PACKAGE_NAME": "com.kmmx.appone"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.kmmx.appone"
+            "PACKAGE_NAME": "com.phonegap.hello-world"
         }
     },
     "dependent_plugins": {}

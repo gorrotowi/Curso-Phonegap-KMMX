@@ -4,11 +4,11 @@
         "*"
     ],
     "version": "2.2.0",
-    "name": "App One",
-    "description": "Este es un Hello world de Phonegap",
+    "name": "Hello World",
+    "description": "Hello World sample application that responds to the deviceready event.",
     "developer": {
         "name": "PhoneGap Team",
-        "url": "http://kmmx.com"
+        "url": "http://phonegap.com"
     },
     "fullscreen": "false",
     "icons": {
