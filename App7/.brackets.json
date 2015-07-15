@@ -1,0 +1,5 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/gorro/Documents/Curso-Phonegap-KMMX/App7/platforms/ios/build/emulator/App7.app/www/plugins/cordova-plugin-splashscreen/www/splashscreen.js"
+    ]
+}
