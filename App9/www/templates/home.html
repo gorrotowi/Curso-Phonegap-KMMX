@@ -1,9 +1,21 @@
-<ion-view view-title="Home">
+<ion-view view-title="Home" >
+    <ion-nav-buttons side="secondary">
+        <button class="button button-clear ion-plus" ng-click="addPost()">
+        </button>
+      </ion-nav-buttons>
 
   <ion-content class="padding">
-      {{pagina}}
 
-      <h1>asdfasdfdsf</h1>
+
+
+    <ion-list>
+        <ion-item ng-repeat="item in posts" class="item item-thumbnail-left" href="#/tab/home/{{item.id}}">
+          <!-- <img ng-src="{{item.thumbnailUrl}}"> -->
+          <h2>{{item.title}}</h2>
+          <p>{{pagina}}</p>
+        </ion-item>
+      </ion-list>
+
   </ion-content>
 
 </ion-view>

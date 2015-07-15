@@ -33,6 +33,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller:'aboutctrl'
         }
       }
+    })
+    .state('tab.detaillist',{
+      url:'/home/:id',
+      views:{
+        'tab-home':{
+          templateUrl:'templates/detail.html',
+          controller:'detailctrl'
+        }
+      }
     });
 
   $urlRouterProvider.otherwise('/tab/home');
