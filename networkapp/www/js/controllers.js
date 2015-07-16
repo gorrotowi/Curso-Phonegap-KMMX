@@ -13,12 +13,16 @@ angular.module('starter.controllers', [])
          $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
            $scope.$apply(function() {
              $scope.networkstate = networkState;
+             $scope.networktype = $cordovaNetwork.getNetwork();
+             $scope.networkAv = $cordovaNetwork.isOnline()
            })
          })
 
          $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
            $scope.$apply(function() {
              $scope.networkstate = networkState;
+             $scope.networktype = $cordovaNetwork.getNetwork();
+             $scope.networkAv = $cordovaNetwork.isOnline()
            })
          })
  }, false);
