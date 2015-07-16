@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -8,6 +8,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    Parse.initialize("W50XVPDzbi8YiCZTYPPuzBAOrWfQJA6BfTc7BcxP","i6MMAG4GceHNuanQl3YKgynAMFvSum3C5DVD9P3u");
   });
 })
 .config(function($stateProvider, $urlRouterProvider) {
@@ -40,6 +41,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         'tab-home':{
           templateUrl:'templates/detail.html',
           controller:'detailctrl'
+        }
+      }
+    })
+    .state('tab.persona',{
+      url:'/persona',
+      views:{
+        'tab-persona':{
+          templateUrl:'templates/persona.html',
+          controller:'personactrl'
         }
       }
     });

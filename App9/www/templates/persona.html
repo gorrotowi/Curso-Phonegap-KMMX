@@ -1,0 +1,15 @@
+<ion-view view-title="Perfil">
+
+  <ion-nav-buttons side="secondary">
+      <button class="button button-clear ion-plus" ng-click="addUserData()">
+        Agregar datos
+      </button>
+    </ion-nav-buttons>
+
+  <ion-content class="padding">
+    <img ng-src="{{userimage}}" width="300px" width="300px"/>
+    <h1>{{username}}</h1>
+    <h2>{{userage}}</h2>
+    <strong>{{usersex}}</strong>
+  </ion-content>
+</ion-view>

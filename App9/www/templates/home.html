@@ -9,10 +9,11 @@
 
 
     <ion-list>
-        <ion-item ng-repeat="item in posts" class="item item-thumbnail-left" href="#/tab/home/{{item.id}}">
+        <ion-item ng-repeat="item in posts" class="item item-thumbnail-left" href="#/tab/home/{{item.id}}" ng-click="getdata($index)">
           <!-- <img ng-src="{{item.thumbnailUrl}}"> -->
           <h2>{{item.title}}</h2>
           <p>{{pagina}}</p>
+          {{$parent.nombre}}
         </ion-item>
       </ion-list>
 

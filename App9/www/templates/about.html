@@ -1,7 +1,11 @@
 <ion-view view-title="About">
   <ion-content class="padding">
       {{pagina}}
+      <button class="button button-full button-balanced" ng-click="takePhoto()">
+        <b>Tomar foto</b>
+      </button>
 
-      <h1>asdfasdfdsf</h1>
+      <img ng-src="{{imgPhoto}}" alt="" width="300px" height="650px" />
+
   </ion-content>
 </ion-view>
