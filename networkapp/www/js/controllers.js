@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
          })
 
          $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
-           $scope.$apply(function() {
+           $scope.$apply(function () {
              $scope.networkstate = networkState;
              $scope.networktype = $cordovaNetwork.getNetwork();
              $scope.networkAv = $cordovaNetwork.isOnline()
@@ -29,23 +29,22 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+.controller('ChatsCtrl', function($scope, $http, $cordovaGeolocation) {
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+      $http.get('http://api.citybik.es/v2/networks/ecobici').success(function(response) {
+      // $http.get('http://api.citybik.es/ecobici.json').success(function(response) {
+          $scope.estaciones = response.network.stations
+      }).error(function (error) {
+        console.log("Error "+error)
+
+      });
+
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('ChatDetailCtrl', function($scope, $stateParams) {
+  $scope.lat = $stateParams.lat
+  $scope.long = $stateParams.long
+  $scope.name = $stateParams.name
 })
 
 .controller('AccountCtrl', function($scope) {

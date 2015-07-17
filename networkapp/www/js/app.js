@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova', 'ngMap'])
 
 .run(function($ionicPlatform, $cordovaNetwork) {
   $ionicPlatform.ready(function() {
@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     })
     .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+      url: '/chats/:lat/:long/:name',
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
@@ -81,5 +81,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
+
+})
+.directive('map', function(){
+
+  return {
+
+    restrict: 'A',
+        link:function(scope, element, attrs){
+
+          var zValue = scope.$eval(attrs.zoom);
+          var lat = scope.$eval(attrs.lat);
+          var lng = scope.$eval(attrs.lng);
+
+
+          var myLatlng = new google.maps.LatLng(lat,lng),
+          mapOptions = {
+                zoom: zValue,
+                center: myLatlng
+            },
+              map = new google.maps.Map(element[0],mapOptions);
+        }
+
+  };
 
 });
