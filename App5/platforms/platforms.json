@@ -1,5 +1,6 @@
 {
     "ios": "3.8.0",
     "android": "4.0.2",
-    "firefoxos": "3.6.3"
+    "firefoxos": "3.6.3",
+    "blackberry10": "3.7.0"
 }
