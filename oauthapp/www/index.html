@@ -47,11 +47,13 @@
         </ion-refresher>
 
         <ion-list>
-          <ion-item class="item-remove-animate" ng-repeat="friend in friendlist" type="item-text-wrap">
+          <ion-item class="item-avatar" ng-repeat="friend in friendlist" type="item-text-wrap">
             <img ng-src="{{friend.picture.data.url}}" alt="" />
             <h2>{{friend.name}}</h2>
           </ion-item>
         </ion-list>
+
+        <ion-infinite-scroll ng-if="cancelmore" on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>
 
       </ion-content>
     </ion-pane>
