@@ -17,6 +17,36 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+.config(function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+    .state('movies',{
+      url:'/',
+      templateUrl:"templates/movies.html",
+      controller:'moviesCtrl'
+    })
+    .state('moviedetail',{
+      url:'/moviedetail',
+      templateUrl:"templates/moviedetail.html",
+      controller:'moviedetailCtrl'
+    })
+
+    $urlRouterProvider.otherwise('/');
+
+})
 .controller('moviesCtrl', function($scope, $http) {
-  
+  $http.get("http://api.themoviedb.org/3/discover/movie?api_key=74d99dff7456accfbf8585d063760134")
+    .success(function(success) {
+      $scope.movies = success.results
+      // alert($scope.movies.length)
+      for (var i = 0; i < $scope.movies.length; i++) {
+          console.log($scope.movies[i].poster_path)
+      }
+    })
+    .error(function(error) {
+      alert(error)
+    });
+
+})
+.controller('moviedetailCtrl', function($scope) {
+  $scope.title = "titulo de la pelicula"
 })
